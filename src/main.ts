@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 
-import "./styles/main.css";
+import "@unocss/reset/tailwind.css";
+import "~/styles/main.css";
+import "virtual:uno.css";
 
 import App from "~/App.vue";
 import router from "~/router";
