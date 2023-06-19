@@ -4,6 +4,8 @@ import path from "node:path";
 import UnoCss from "unocss/vite";
 import { convertEnv } from "./vite/env";
 import { viteMockServe } from "vite-plugin-mock";
+import Pages from "vite-plugin-pages";
+import Layouts from "vite-plugin-vue-layouts";
 
 // https://vitejs.dev/config/
 // export default defineConfig({
@@ -27,6 +29,8 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       vue(),
+      Pages(),
+      Layouts(),
       UnoCss(),
       viteMockServe({
         mockPath: "mock",

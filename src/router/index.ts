@@ -1,13 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import type { RouteRecordRaw } from "vue-router";
-
-const Home = () => import("../pages/Home.vue");
-
-const routes: RouteRecordRaw[] = [{ path: "/", component: Home }];
+import { setupLayouts } from "virtual:generated-layouts";
+import routes from "virtual:generated-pages";
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: setupLayouts(routes),
 });
 
 export default router;
